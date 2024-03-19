@@ -9,17 +9,18 @@ const dbConnectionCheck = require("./db/dbConnectCheck");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 
-// ____________________ Этого нет в коде с лекции
-const Register = require("./src/views/Register");
-const Home = require("./src/views/Home");
-const Login = require("./src/views/Login");
-const renderTemplate = require("./src/lib/renderTemplate");
-// _______________________
+const { secureRout, checkUser } = require('./src/middlewares/common');
+
 
 const { PORT } = process.env;
 
 const app = express();
 dbConnectionCheck();
+
+const indexRoutes = require('./src/routes/indexRoutes');
+const loginRoutes = require('./src/routes/loginRoutes');
+const regRoutes = require('./src/routes/regRoutes');
+
 
 const sessionConfig = {
   name: "NameCookie",
@@ -40,23 +41,10 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 app.use(session(sessionConfig));
 
-// ______________________  Этого нет в коде с лекции
 
-app.get("/", (req, res) => {
-  // console.log(app.locals);
-  renderTemplate(Home, {}, res);
-});
-
-app.get("/log", (req, res) => {
-  // console.log(app.locals);
-  renderTemplate(Login, {}, res);
-});
-
-app.get("/reg", (req, res) => {
-  // console.log(app.locals);
-  renderTemplate(Register, {}, res);
-});
-// ______________________
+app.use('/login', secureRout, loginRoutes);
+app.use('/register', secureRout, regRoutes);
+app.use('/', checkUser, indexRoutes);
 
 app.listen(PORT ?? 3100, () => {
   console.log("Сервер запущен!");
@@ -68,4 +56,8 @@ app.get("/*", (req, res) => {
   }, 500);
 });
 
-//Сервер запущен на минималках. Бд есть.
+// Остановилась на том, что работает логин и пароль. 
+// Вход на выход и пишет Hi,user
+// Регистрация проходит в бд пишет
+// Не переходит на Home 
+// Не выводит сообщение здесь о успешной  авторизации зеленого цвета
