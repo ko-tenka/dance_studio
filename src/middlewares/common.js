@@ -5,7 +5,7 @@ function secureRout(req, res, next) {
   if (!req.session.login) {
     next();
   } else {
-    res.redirect("/");
+    res.redirect("/home");
   }
 }
 

@@ -22,8 +22,8 @@ form.addEventListener('submit', async (e) => {
         msg.innerText = result.err;
         msg.style.color = 'red';
       } else {
-        msg.innerText = result.msg;
-        msg.style.color = 'green';
+        // msg.innerText = result.msg;
+        // msg.style.color = 'green';
         form.remove();
         const h2 = document.querySelector('.hTag');
         h2.remove();
@@ -32,6 +32,9 @@ form.addEventListener('submit', async (e) => {
         const nav = document.querySelector('#navbarNav');
         const newHead = `
         <ul class="navbar-nav">
+        <li class="new-item">
+        <a class="nav-link" href="/home">Моя страница</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link">
             Hi, ${inputs.login}

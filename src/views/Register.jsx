@@ -18,7 +18,7 @@ module.exports = function Login() {
           <button type="submit" className="btn btn-primary shadow rounded">Отправить</button>
         </form>
         <hr />
-        <h3 className='regMsg'>Здесь будет ваше сообщение</h3>
+        <h3 className='regMsg'>Добро подаловать!</h3>
       </Layout>
     );
   };
