@@ -4,10 +4,13 @@ require("@babel/register");
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
-const dbConnectionCheck = require("./db/dbConnectCheck");
+// const dbConnectionCheck = require("./db/dbConnectCheck");
+const apiRouter = require('./src/routes/apiRouter')
+const dbConnectionChec = require('./src/middlewares/dbCheck');
 
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
+
 
 const { secureRout, checkUser } = require('./src/middlewares/common');
 
@@ -15,15 +18,15 @@ const { secureRout, checkUser } = require('./src/middlewares/common');
 const { PORT } = process.env;
 
 const app = express();
-dbConnectionCheck();
+// dbConnectionCheck();
 
-const News = require('./src/views/News')
-const Home = require('./src/views/Home')
-const Previw = require('./src/views/Preview')
+// const News = require('./src/views/News')
+// const Home = require('./src/views/Home')
+// const Previw = require('./src/views/Preview')
 const indexRoutes = require('./src/routes/indexRoutes');
 const loginRoutes = require('./src/routes/loginRoutes');
 const regRoutes = require('./src/routes/regRoutes');
-const renderTemplate = require("./src/lib/renderTemplate");
+// const renderTemplate = require("./src/lib/renderTemplate");
 
 
 const sessionConfig = {
@@ -45,20 +48,9 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 app.use(session(sessionConfig));
 
-app.get('/news', (req, res)=>{
-  const { login } = req.session
-  renderTemplate(News, {login}, res)
-});
-app.get('/', (req, res)=>{
-  const { login } = req.session
-  renderTemplate(Previw, {login}, res)
-});
-app.get('/home', (req, res) => {
-  const { login } = req.session
-  renderTemplate(Home, {login}, res);
-});
 app.use('/login', secureRout, loginRoutes);
 app.use('/register', secureRout, regRoutes);
+app.use('/api', dbConnectionChec, apiRouter);
 app.use('/', checkUser, indexRoutes);
 
 app.listen(PORT ?? 3100, () => {
@@ -70,9 +62,3 @@ app.get("/*", (req, res) => {
     res.redirect("/");
   }, 500);
 });
-
-// Остановилась на том, что работает логин и пароль. 
-// Вход на выход и пишет Hi,user
-// Регистрация проходит в бд пишет
-// Не переходит на Home 
-// Не выводит сообщение здесь о успешной  авторизации зеленого цвета
