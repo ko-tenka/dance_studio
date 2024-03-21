@@ -23,6 +23,7 @@ module.exports = function Preview({login}) {
     <div className='newScholl'>
       <h1 className='newSchollTxt1'>Новости студии</h1>
     </div>
+    <div className='tasksContainer'></div>
     </Layout>
   );
 };

@@ -7,6 +7,7 @@ module.exports = function Layout({ children, login }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src='/js/tasks.js' />
         {/* <link type="image/x-icon" href="/assets/favicon.ico" rel="shortcut icon" /> */}
         <link rel="stylesheet" href="/css/style.css" />
         <title>Cookie</title>

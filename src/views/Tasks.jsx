@@ -20,7 +20,7 @@ module.exports = function Tasks() {
 
         <div className='tasksContainer'></div>
       </div>
-      <script defer src='/js/tasks.js' />
+      
     </Layout>
   );
 }
