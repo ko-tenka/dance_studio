@@ -4,10 +4,15 @@ const renderTemplate = require('../lib/renderTemplate');
 const Home = require('../views/Home');
 const Preview = require('../views/Preview')
 const Tasks = require('../views/Tasks');
+const Secure = require('../views/Secure')
 
 
 const router = express.Router();
 
+router.get('/secure', async (req, res) => {
+  const { login } = req.session;
+  renderTemplate(Secure, { login }, res);
+});
 
 router.get('/news', async (req, res) => {
   const { login } = req.session;

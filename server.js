@@ -23,6 +23,7 @@ const app = express();
 // const News = require('./src/views/News')
 // const Home = require('./src/views/Home')
 // const Previw = require('./src/views/Preview')
+const secureRoutes = require('./src/routes/secureRoutes')
 const indexRoutes = require('./src/routes/indexRoutes');
 const loginRoutes = require('./src/routes/loginRoutes');
 const regRoutes = require('./src/routes/regRoutes');
@@ -48,6 +49,7 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 app.use(session(sessionConfig));
 
+app.use('/secure', secureRout, secureRoutes);
 app.use('/login', secureRout, loginRoutes);
 app.use('/register', secureRout, regRoutes);
 app.use('/api', dbConnectionChec, apiRouter);

@@ -17,7 +17,8 @@ module.exports = function Layout({ children, login }) {
             <div className="collapse navbar-collapse" id="navbarNav">
               {login ? (
                 <ul className="navbar-nav">
-                  <li className="nav-item" ><a className="nav-link" href="/home">Моя страница</a></li>
+                  <li className="nav-item" ><a className="nav-link" href="/secure">Админ</a></li>
+                  <li className="nav-item" ><a className="nav-link" href="/room">Моя страница</a></li>
                   <li className="nav-item">
                     <a className="nav-link">
                       Hi, {login}
