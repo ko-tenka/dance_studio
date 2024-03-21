@@ -56,3 +56,57 @@ background-position: center;
     z-index: 3; 
     color: white;
 }
+.probClass{
+    width: 100%;
+    height: 320px;
+    background-color: #E94793;
+    color: white;
+}
+.probClassTxt1{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+}
+.probClassTxt2{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 50px;
+}
+.probClassTxt3{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+
+.oStudii{
+    width: 100%;
+    height: 320px;
+    background-color: black;
+}
+.oStudiiTxt1,
+.oStudiiTxt2,
+.oStudiiTxt3 {
+    color: white;
+    font-size: 28px;
+    text-align: left;
+    width: 70%;
+    margin: auto;
+}
+.oStudiiTxt1{
+    padding-top: 60px;
+}
+.oStudiiTxt3{
+    margin-top: 50px;
+}
+.newScholl{
+    width: 100%;
+    height: 1100px;
+    background-color: white;
+    color: black;
+}
+.newSchollTxt1{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 40px;
+}

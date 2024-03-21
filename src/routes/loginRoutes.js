@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
         req.session.login = user.login;
         req.session.save(() => {
           res.json({ msg: 'Вы успешно авторизованы!' });
+          // window.location.href = '/';
         });
       }
     }

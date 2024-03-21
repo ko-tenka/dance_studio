@@ -44,7 +44,8 @@ app.use(express.static(path.join(process.cwd(), "public")));
 app.use(session(sessionConfig));
 
 app.get('/', (req, res)=>{
-  renderTemplate(Previw, {}, res)
+  const { login } = req.session
+  renderTemplate(Previw, {login}, res)
 })
 app.use('/login', secureRout, loginRoutes);
 app.use('/register', secureRout, regRoutes);

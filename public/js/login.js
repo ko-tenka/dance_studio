@@ -47,7 +47,8 @@ form.addEventListener('submit', async (e) => {
         `
         nav.innerHTML = newHead;
         // * если хотим изменить url
-        window.history.pushState(null, null, '/')
+        // window.history.pushState(null, null, '/') - создает новую страничку
+        window.location.href = '/';
       }
     } catch (error) {
       console.log('Ошибка авторизации=>', error);

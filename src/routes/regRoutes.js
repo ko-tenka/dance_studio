@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
       // * чтобы не было ошибки [session-file-store] will retry, error on last attempt,
       // * Делай save файла сессий
       req.session.save(() => {
-        res.json({ msg: 'Пользователь зарегистрирован!' });
+        res.json({ msgDone: 'Пользователь зарегистрирован!' });
       });
     }
   } catch (error) {
