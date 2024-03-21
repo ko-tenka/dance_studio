@@ -47,7 +47,7 @@ form.addEventListener('submit', async (e) => {
         `
         nav.innerHTML = newHead;
         // * если хотим изменить url
-        // window.history.pushState(null, null, '/') - создает новую страничку
+        // window.history.pushState(null, null, '/') - создае
         window.location.href = '/';
       }
     } catch (error) {

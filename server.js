@@ -51,7 +51,7 @@ app.use(session(sessionConfig));
 app.use('/login', secureRout, loginRoutes);
 app.use('/register', secureRout, regRoutes);
 app.use('/api', dbConnectionChec, apiRouter);
-app.use('/', checkUser, indexRoutes);
+app.use('/', indexRoutes);
 
 app.listen(PORT ?? 3100, () => {
   console.log("Сервер запущен!");
