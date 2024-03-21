@@ -17,6 +17,8 @@ const { PORT } = process.env;
 const app = express();
 dbConnectionCheck();
 
+const News = require('./src/views/News')
+const Home = require('./src/views/Home')
 const Previw = require('./src/views/Preview')
 const indexRoutes = require('./src/routes/indexRoutes');
 const loginRoutes = require('./src/routes/loginRoutes');
@@ -43,10 +45,18 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 app.use(session(sessionConfig));
 
+app.get('/news', (req, res)=>{
+  const { login } = req.session
+  renderTemplate(News, {login}, res)
+});
 app.get('/', (req, res)=>{
   const { login } = req.session
   renderTemplate(Previw, {login}, res)
-})
+});
+app.get('/home', (req, res) => {
+  const { login } = req.session
+  renderTemplate(Home, {login}, res);
+});
 app.use('/login', secureRout, loginRoutes);
 app.use('/register', secureRout, regRoutes);
 app.use('/', checkUser, indexRoutes);
