@@ -7,9 +7,6 @@ const Secures = require('../views/Secure');
 
 const { Secure } = require('../../db/models');
 
-router.get('/', (req, res) => {
-  renderTemplate(Secures, null, res);
-});
 
 router.post('/', async (req, res) => {
   const { pass } = req.body;

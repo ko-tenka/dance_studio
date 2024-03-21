@@ -4,7 +4,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = new FormData(form);
   const inputs = Object.fromEntries(data);
-  console.log(inputs)
+  console.log(inputs.pass)
   if (!inputs.pass) {
     alert('Введите свои данные');
   } else {
