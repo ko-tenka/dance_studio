@@ -24,6 +24,7 @@ module.exports = function Preview({login}) {
       <h1 className='newSchollTxt1'>Новости студии</h1>
     </div>
     <div className='tasksContainer'></div>
+    <script defer src='/js/task2.js' />
     </Layout>
   );
 };

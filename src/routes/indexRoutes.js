@@ -2,10 +2,12 @@ const express = require('express');
 
 const renderTemplate = require('../lib/renderTemplate');
 const Home = require('../views/Home');
-const Previw = require('../views/Preview')
+const Preview = require('../views/Preview')
 const Tasks = require('../views/Tasks');
 
+
 const router = express.Router();
+
 
 router.get('/news', async (req, res) => {
   const { login } = req.session;
@@ -25,9 +27,9 @@ router.get('/logout', (req, res) => {
   });
 });
 
-router.get('/', (req, res)=>{
+router.get('/', (req, res) => {
   const { login } = req.session;
-  renderTemplate(Previw, {login}, res);
+  renderTemplate(Preview, {login}, res);
 });
 
 module.exports = router;
