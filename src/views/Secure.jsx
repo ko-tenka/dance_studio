@@ -15,6 +15,7 @@ module.exports = function Secure({ login }) {
       </form>
       <hr />
       <h3 className='logMsg2'>Добро пожаловать!</h3>
+      <a href="/" className='loginBack'>Вернуться</a>
       </div>
     </Layout>
   );

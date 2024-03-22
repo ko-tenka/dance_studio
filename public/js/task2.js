@@ -8,6 +8,7 @@ async function loadTasks() {
       const taskElement = document.createElement('div');
       taskElement.className = 'taskCard';
       taskElement.innerHTML = `
+      <img src="/assets/dance.webp" class='photoCard' alt="Фото" />
 		 <h3>${task.title}</h3>
 		 <p>${task.description}</p>
 	  `;

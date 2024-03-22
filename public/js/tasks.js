@@ -11,6 +11,7 @@ async function loadTasks() {
       const taskElement = document.createElement('div');
       taskElement.className = 'taskCard';
       taskElement.innerHTML = `
+     <img src="/assets/dance.webp" class='photoCard' alt="Фото" />
 		 <h3>${task.title}</h3>
 		 <p>${task.description}</p>
 		 <button class='editBtn' type='button' data-id=${task.id}>Edit Task</button>
@@ -72,6 +73,7 @@ tasksContainer.addEventListener('click', async (event) => {
       if (response.ok) {
         const taskElement = event.target.closest('.taskCard');
         taskElement.innerHTML = `
+        <img src="/assets/dance.webp" class='photoCard' alt="Фото" />
 			  <h3>${title}</h3>
 			  <p>${description}</p>
 			  <button class='editBtn' type='button' data-id=${taskId}>Edit Task</button>
@@ -111,6 +113,7 @@ form.addEventListener('submit', async (event) => {
       const taskElement = document.createElement('div');
       taskElement.className = 'taskCard';
       taskElement.innerHTML = `
+      <img src="/assets/dance.webp" class='photoCard' alt="Фото" />
 		 <h3>${newTask.title}</h3>
 		 <p>${newTask.description}</p>
 		 <button class='editBtn' type='button' data-id=${newTask.id}>Edit Task</button>

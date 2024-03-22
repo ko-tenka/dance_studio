@@ -6,7 +6,7 @@ const Preview = require('../views/Preview')
 const Tasks = require('../views/Tasks');
 const Secure = require('../views/Secure')
 
-
+const { secureRout, checkUser } =require('../middlewares/common')
 const router = express.Router();
 
 router.get('/secure', async (req, res) => {
@@ -19,8 +19,9 @@ router.get('/news', async (req, res) => {
   renderTemplate(Tasks, { login }, res);
 });
 
-router.get('/home', (req, res) => {
+router.get('/home', checkUser, (req, res) => {
   const { login } = req.session;
+  console.log(login)
   renderTemplate(Home, { login }, res);
 });
 
