@@ -4,21 +4,19 @@ const Layout = require('./Layout');
 module.exports = function Login() {
     return (
       <Layout>
-        <h2>Зарегистрируйтесь</h2>
-        <hr />
+        <div className='loginDivConteiner'>
+        <h2 className='hTag'>Зарегистрируйтесь</h2>
         <script defer src="/js/index.js" />
         <script defer src='/js/reg.js' />
         <form action="/register" method="POST" id="regForm">
-          <label htmlFor="exampleInput1" className="form-label">Login</label>
-          <input name="login" type="text" className="form-control shadow rounded" id="exampleInput1" />
-          <label htmlFor="exampleInput2" className="form-label">Password</label>
-          <input name="password" type="password" className="form-control shadow rounded" id="exampleInput2" />
-          <label htmlFor="exampleInput3" className="form-label">Email</label>
-          <input name="email" type="email" className="form-control shadow rounded" id="exampleInput3" />
-          <button type="submit" className="btn btn-primary shadow rounded">Отправить</button>
+        <div><input name="login" placeholder="Логин" type="text" className="form-control shadow rounded" id="exampleInput1" /></div> 
+        <div> <input name="password" placeholder="Пароль" type="password" className="form-control shadow rounded" id="exampleInput2" /></div> 
+        <div> <input name="email" placeholder="Email" type="email" className="form-control shadow rounded" id="exampleInput3" /></div> 
+          <div className='btnTaskDiv'><button type="submit" className="btn btn-primary shadow rounded">Отправить</button></div>
         </form>
-        <hr />
-        <h3 className='regMsg'>Добро подаловать!</h3>
+        <h3 className='regMsg'>Добро пожаловать!</h3>
+        <a href="/" className='loginBack'>Вернуться</a>
+        </div>
       </Layout>
     );
   };

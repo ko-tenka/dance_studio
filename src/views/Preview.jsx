@@ -25,6 +25,19 @@ module.exports = function Preview({login}) {
     </div>
     <div className='tasksContainer'></div>
     <script defer src='/js/task2.js' />
+
+    <div className='apiConteiner'>
+    <div id="map" className='api'></div>
+      <h1 className='contant1'>Наши контакты</h1>
+      <div className='contactConteiner'>
+        <a href="https://t.me/mazedancecompany" className='contant2'>Telegramm</a>
+        <a href="https://t.me/mazedancecompany" className='contant2'>VKontakte</a>
+        <a href="https://t.me/mazedancecompany" className='contant2'>Instagramm</a>
+    </div>
+    </div>
+    <script defer src='/js/api.js' type="text/javascript"/>
+
+
     </Layout>
   );
 };
