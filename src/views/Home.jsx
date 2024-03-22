@@ -11,6 +11,7 @@ module.exports = function Home({ login }) {
       <div className='aHomeDiv'><a className='aBackHome' href="/">На главную</a></div>
       <div className='aHomeDiv'><a className='aBackHome' href="/news">Создать новость</a></div>
       </div>
+
     </Layout>
   );
 };
