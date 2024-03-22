@@ -20,7 +20,7 @@ form.addEventListener('submit', async (e) => {
       const msg = document.querySelector('.logMsg');
       if (result.err) {
         msg.innerText = result.err;
-        msg.style.color = 'red';
+        msg.style.color = 'black';
       } else {
         // msg.innerText = result.msg;
         // msg.style.color = 'green';

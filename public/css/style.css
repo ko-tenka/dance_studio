@@ -101,7 +101,9 @@ background-position: center;
 }
 .newScholl{
     width: 100%;
-    height: 1100px;
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 70px;
     background-color: white;
     color: black;
 }
@@ -136,8 +138,21 @@ background-position: center;
     gap: 30px;
     margin: 0 auto;
     width: 100%;
+    min-height: 1000px;
+    height: 100%;
+    background-color: #e9479389;
   }
-  
+  .tasksTxt1 {
+    font-size: 40px;
+  }
+  .editBtn {
+    margin-bottom: -50px;
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4200FF;
+    color: white;
+  }
   .tasksContainer {
     display: flex;
     align-items: center;
@@ -150,23 +165,37 @@ background-position: center;
   .taskCard {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     width: 300px;
-    height: 280px;
+    height: 300px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 20px;
-    background-color: aliceblue;
+    background-color: #E94793;
     margin-bottom: 30px;
   }
   
   .taskCard p {
-    color: rgb(219, 0, 0);
+    width: 200px;
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
   }
+  .taskCard h3 {
+    width: 200px;
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    background-color: #9176E0;
+    color: white;
+  } 
   
   .cardBtn {
-    background-color: rgb(219, 0, 0);
+    background-color: #4200FF;
+    border: none;
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
@@ -178,13 +207,26 @@ background-position: center;
   }
   
   .addTaskForm {
-    background-color: aliceblue;
-    padding: 20px 40px;
+    margin-top: 20px;
+    background-color: #9176E0;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+  }
+  .inpTask1{
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+  }
+  .btnTask1{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
   }
   
   .mockDataContainer {
@@ -196,3 +238,105 @@ background-position: center;
     padding: 40px;
   }
   
+  
+
+
+
+
+.loginDivConteiner{
+  height: 1000px;
+  background-color: #e9479389;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+
+}
+.form-control{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #e9479300;
+}
+.loginDivFlex{
+  text-align: center;
+  padding: 5px;
+}
+.hTag{
+  margin-top: 180px;
+  margin-bottom: 10px;
+}
+.btn-primary{
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  padding: 5px;
+  border: none;
+  margin-left: 65px;
+}
+.btnTaskDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logMsg2,
+.regMsg,
+.logMsg{
+  margin-top: 10px;
+}
+
+.aBackHome{
+  border-radius: 8px;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  font-size: 23;
+}
+.loginBack{
+  color: black;
+  margin-top: 200px;
+  margin-left: 800px;
+}
+
+.aHomeDiv{
+   margin-top: 30px;
+}
+.homeTitle{
+  margin-top: 10px;
+}
+.catAdmin{
+  margin-top: 100px;
+  width: 200px;
+}
+
+.api{
+  margin-top: 100px;
+  width: 800px; 
+  height: 400px;
+}
+.apiConteiner{
+  height: 600px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.contant1{
+  margin-top: 40px;
+  color: white;
+  font-size: 40px;
+}
+
+.contant2{
+  margin: 50px;
+  text-align: center;
+  color: white;
+}
+.contactConteiner{
+  display: flex;
+}
