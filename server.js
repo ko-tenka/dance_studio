@@ -49,7 +49,6 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 app.use(session(sessionConfig));
 
-app.use('/secure', secureRoutes);
 app.use('/login', secureRout, loginRoutes);
 app.use('/register', secureRout, regRoutes);
 app.use('/api', dbConnectionChec, apiRouter);

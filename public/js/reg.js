@@ -20,7 +20,7 @@ form.addEventListener('submit', async (e) => {
       if (result.err) {
         const msg = document.querySelector('.regMsg');
         msg.innerText = result.err;
-        msg.style.color = 'red';
+        msg.style.color = 'black';
       } else {
         window.location.href = '/';
       }

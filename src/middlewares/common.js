@@ -17,4 +17,5 @@ function checkUser(req, res, next) {
   }
 }
 
-module.exports = { secureRout, checkUser };
+
+module.exports = { secureRout, checkUser};
